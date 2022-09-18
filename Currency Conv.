@@ -1,0 +1,53 @@
+namespace currency
+{
+    public partial class form1 : Form
+    {
+        public form1()
+        {
+            InitializeComponent();
+        }
+
+        private void convertButton_Click(object sender, EventArgs e)
+        {
+            // using / catch to handle errors with invalid data entered
+            try
+            {
+                //code that should run correctly
+                double usd; // us currency
+                double btc; // other variables
+
+                // the conversion of currency
+                btc = double.Parse(currencyTextBox.Text);
+
+                // calculate the conversion amount
+                usd = 1;
+                btc = usd * 0.00002306;
+
+                // output
+                string output = "US Dollars Converts = " + btc.ToString("n") + " Bitcoin";
+
+                // display the currency in the text box
+                MessageBox.Show(output, "Bitcoin");
+            }
+            catch
+            {
+                // message displaying invalid input
+                MessageBox.Show("Invalid Data Entered. Please Try Again.", "Error");
+            }
+        }
+        private void closeButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void usdLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void currencyTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
